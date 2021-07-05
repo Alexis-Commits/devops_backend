@@ -1,6 +1,32 @@
-FROM python:3.8-alpine
-RUN apk update && apk add libpq
-ENV PYTHONUNBUFFERED 1
+FROM ubuntu:16.04
+
+# Set workdir
+WORKDIR /opt/backendapi
+
+# Perform an update and install
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    apache2 \
+    apt-transport-https \
+    curl \
+    language-pack-el-base \
+    language-pack-en-base \
+    libapache2-mod-wsgi-py3 \
+    libffi-dev \
+    libpq-dev \
+    libssl-dev \
+    postgresql \
+    postgresql-contrib \
+    python3-dev \
+    python3-pip \
+    python3-setuptools \
+    python3-wheel \
+    redis-server \
+    supervisor \
+ && apt-get update && apt-get -y install --no-install-recommends nodejs \
+ && pip3 install -r requirements.txt  \
+ && apt-get remove -y apt-transport-https curl \
+ && apt-get autoremove -y \
+ && rm -rf /var/lib/apt/lists/*
 RUN mkdir /code
 WORKDIR /code
 COPY . /code
