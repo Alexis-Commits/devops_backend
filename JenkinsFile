@@ -5,12 +5,12 @@ pipeline {
         stage('Build') {
             steps {
                 sh ' docker build -t backend .' 
-                 docker run -dp 3000:3000 getting-started
             }
         }
          stage('Run') {
             steps {
-                sh 'docker run -dp 3000:3000 getting-started'
+                sh 'docker run -dp 8000:8000 backend
+'
             }
         }
     }
