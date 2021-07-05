@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'hitch_postgres',
         'USER': 'admin',
         'PASSWORD': 'pass123',
-        'HOST': '20.86.175.51',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
