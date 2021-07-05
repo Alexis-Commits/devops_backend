@@ -1,6 +1,7 @@
 FROM python:3.8-alpine
-RUN apt update & apt -y upgrade
-RUN apk update && apk add libpq
+RUN apk update && \
+    apk add --virtual build-deps gcc python-dev musl-dev && \
+    apk add postgresql-dev
 RUN apk add --virtual .build-deps gcc python-dev musl-dev postgresql-dev
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
