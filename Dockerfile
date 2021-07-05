@@ -1,8 +1,5 @@
 FROM ubuntu:16.04
 
-# Set workdir
-WORKDIR /opt/backendapi
-
 # Perform an update and install
 RUN apt-get update && apt-get install -y --no-install-recommends \
     apache2 \
@@ -23,7 +20,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     redis-server \
     supervisor \
  && apt-get update && apt-get -y install --no-install-recommends nodejs \
- && pip3 install -r requirements.txt  \
  && apt-get remove -y apt-transport-https curl \
  && apt-get autoremove -y \
  && rm -rf /var/lib/apt/lists/*
