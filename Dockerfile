@@ -1,6 +1,6 @@
 FROM python:3.8.2-slim-buster
 RUN apt update & apt -y upgrade
-RUN apt-get install libpq-dev python-dev
+RUN apt install libpq-dev python-dev
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
