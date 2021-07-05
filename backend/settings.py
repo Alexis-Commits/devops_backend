@@ -84,8 +84,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'hitch_postgres',
         'USER': 'admin',
-        'PASSWORD': 'pass123',
-        'HOST': 'localhost',
+        'PASSWORD': 'pass1234',
+        'HOST': '20.86.175.51',
         'PORT': '5432',
     }
 }
