@@ -29,13 +29,7 @@ prompt-toolkit==3.0.19
 psycopg2==2.8.6
 pycparser==2.20
 pyparsing==2.4.7
-pytz==2017.2
-PyYAML==5.4.1
-redis==3.5.3
 requests==2.25.1
-ruamel.yaml==0.17.10
-ruamel.yaml.clib==0.2.6
-six==1.16.0
 sqlparse==0.4.1
 uritemplate==3.0.1
 urllib3==1.26.4
