@@ -20,8 +20,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     redis-server \
     supervisor 
 
-RUN python -m pip3 install -U pip3
-
 RUN mkdir /code
 WORKDIR /code
 COPY . /code
