@@ -14,8 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   
 
 
-RUN sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 2 /
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 2 /
+update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 
 RUN apt-get install python3.6 /
     libpython3.6
