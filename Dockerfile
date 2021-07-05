@@ -10,15 +10,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     python3-setuptools \
     python3-wheel \
-    python3.6 \
-    python3.6-dev\
-    python3-pip \
-    python3.6-venv
+   
+RUN apt-get install software-properties-common -y
 
+RUN add-apt-repository ppa:jonathonf/python-3.6 -y
 RUN apt-get update
+RUN apt-get install python3.6 libpython3.6 -y
 
-RUN apt-get install -y build-essential python3.6 python3.6-dev python3-pip python3.6-venv
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 2 -y
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1 -y
 
+RUN rm /usr/bin/python3
+RUN ln -s python3.6 /usr/bin/python3
+
+   
 # update pip
 RUN python3.6 -m pip install pip --upgrade
 RUN python3.6 -m pip install wheel
