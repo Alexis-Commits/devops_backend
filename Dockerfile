@@ -17,13 +17,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     python3-setuptools \
     python3-wheel \
-    redis-server \
-    supervisor 
 
 RUN mkdir /code
 WORKDIR /code
 COPY . /code
-RUN pip3 install --upgrade pip
+
 RUN pip3 install -r requirements.txt
 RUN chmod +x /code/docker-entrypoint.sh
 ENTRYPOINT [ "/code/docker-entrypoint.sh" ]
