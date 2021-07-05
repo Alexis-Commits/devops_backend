@@ -11,6 +11,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     python3-setuptools \
     python3-wheel 
+    python3.6 /
+    libpython3.6
+
+RUN rm /usr/bin/python3 &&  ln -s python3.6 /usr/bin/python3
 
 RUN mkdir /code
 WORKDIR /code
