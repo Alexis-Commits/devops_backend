@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-wheel \
     redis-server \
     supervisor \
- && apt-get remove -y apt-transport-https curl \
+ && apt-get remove -y apt-transport-https curl 
 
 RUN mkdir /code
 WORKDIR /code
