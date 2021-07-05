@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
 # Perform an update and install
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -19,19 +19,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-wheel \
     redis-server \
     supervisor \
- && apt-get update && apt-get -y install --no-install-recommends nodejs \
  && apt-get remove -y apt-transport-https curl \
- && apt-get autoremove -y \
- && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /code
-
 WORKDIR /code
-
 COPY . /code
-
 RUN pip3 install -r requirements.txt
-
 RUN chmod +x /code/docker-entrypoint.sh
-
 ENTRYPOINT [ "/code/docker-entrypoint.sh" ]
