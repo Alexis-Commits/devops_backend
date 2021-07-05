@@ -13,6 +13,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
    
 RUN apt-get install software-properties-common -y
 
+RUN apt-get update && \
+        apt-get install -y software-properties-common vim
+        add-apt-repository ppa:jonathonf/python-3.6
+
+RUN apt-get update -y
 RUN apt-get update
 RUN apt-get install python3.6 libpython3.6 -y
 
