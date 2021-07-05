@@ -2,7 +2,6 @@ FROM ubuntu:16.04
 
 # Perform an update and install
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    apache2 \
     apt-transport-https \
     curl \
     libpq-dev \
@@ -10,7 +9,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-dev \
     python3-pip \
     python3-setuptools \
-    python3-wheel 
+    python3-wheel \
+    python3.6 \
+    python3.6-dev\
+    python3-pip \
+    python3.6-venv
 
 RUN apt-get update
 
