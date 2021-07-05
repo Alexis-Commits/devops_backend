@@ -26,6 +26,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN mkdir /code
 WORKDIR /code
 COPY . /code
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 RUN chmod +x /code/docker-entrypoint.sh
 ENTRYPOINT [ "/code/docker-entrypoint.sh" ]
